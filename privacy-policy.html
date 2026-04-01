@@ -292,4 +292,74 @@
 
       <section id="background-processing">
         <h2>5. Push Notifications and Background Processing</h2>
-        <p>Kawaii Doodle requests permission to send push notifications to inform you when a connection sends a Doodle. We also request the <strong>
+        <p>Kawaii Doodle requests permission to send push notifications to inform you when a connection sends a Doodle. We also request the <strong>battery optimization exemption</strong> on Android to ensure Firebase Cloud Messaging can reliably deliver notifications even when the application is running in the background. This permission is used solely to maintain notification delivery infrastructure—we do not execute any other background activity. You may revoke notification permissions at any time via your device's operating system settings.</p>
+      </section>
+
+      <section id="data-retention">
+        <h2>6. Data Retention</h2>
+        <p>We retain your data for the duration that your account remains active. Should you choose to delete your account, all associated data—including your profile, Doodle history, and connections list—will be permanently expunged from our servers within 30 days of the deletion request.</p>
+      </section>
+
+      <section id="rights-choices">
+        <h2>7. Your Rights and Choices</h2>
+        <p>You maintain the following rights regarding your personal data:</p>
+        <ul>
+          <li><strong>Access:</strong> You may view your profile information and Doodle history directly within the application.</li>
+          <li><strong>Data Deletion:</strong> Navigate to Profile → Delete Account to permanently remove all your data from our systems.</li>
+          <li><strong>Subscription Management:</strong> Navigate to Profile → Manage Subscription to modify or cancel Kawaii Premium at any time.</li>
+          <li><strong>Notification Opt-Out:</strong> You may disable push notifications entirely via your Android system settings.</li>
+          <li><strong>Direct Inquiries:</strong> For any other data-related requests, please contact us at <a href="mailto:kawaiiidcontact@gmail.com">kawaiiidcontact@gmail.com</a>.</li>
+        </ul>
+      </section>
+
+      <section id="data-security">
+        <h2>8. Data Security</h2>
+        <p>We implement industry-standard security practices, including encrypted connections (HTTPS/TLS), for all data transmitted between the application and our servers. Access to user data is strictly limited to authorized services necessary for app functionality. While no method of transmission over the internet or electronic storage is 100% secure, we undertake commercially reasonable steps to protect your personal information.</p>
+      </section>
+
+      <section id="policy-changes">
+        <h2>9. Changes to This Policy</h2>
+        <p>We reserve the right to modify or update this Privacy Policy periodically. Upon doing so, we will amend the "Effective Date" at the top of this document. Your continued use of the application following such changes constitutes your acceptance of the revised policy. For material changes, we will provide notification via the application or email.</p>
+      </section>
+
+      <section id="reporting">
+        <h2>10. Child Safety & Reporting</h2>
+        <p>Kawaii Doodle strictly complies with all relevant child safety laws and has published standards prohibiting <strong>Child Sexual Abuse and Exploitation (CSAE)</strong>. We maintain a zero-tolerance policy toward any form of abuse.</p>
+        <p><strong>In-App Feedback Mechanism:</strong> If you encounter Doodles or user behavior that violates our policies, we provide a direct in-app mechanism for user feedback. Navigate to the History tab, select the three-dot menu adjacent to the respective Doodle, and select "Report" to immediately notify our moderation team.</p>
+        <p><strong>Addressing CSAM:</strong> We are committed to taking appropriate action to address <strong>Child Sexual Abuse Material (CSAM)</strong>. Any user found distributing, promoting, or interacting with CSAM will be immediately and permanently banned. We actively report all instances of CSAM to the relevant regional and national authorities, including the National Center for Missing & Exploited Children (NCMEC).</p>
+        <p><strong>Child Safety Point of Contact:</strong> Our designated point of contact is ready and able to speak about our app's CSAM prevention practices and compliance. For any child safety concerns, please reach out to us at <a href="mailto:kawaiiidcontact@gmail.com">kawaiiidcontact@gmail.com</a>.</p>
+      </section>
+
+      <section id="contact">
+        <h2>11. Contact Us</h2>
+        <p>If you have any questions, concerns, or formal data requests regarding this Privacy Policy, please contact our support team at:<br />
+        <a href="mailto:kawaiiidcontact@gmail.com">kawaiiidcontact@gmail.com</a></p>
+      </section>
+
+    </main>
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Kawaii Doodle. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll(".document-body section");
+      const navLinks = document.querySelectorAll(".sidebar a");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(link => link.classList.remove("active"));
+            const activeLink = document.querySelector(`.sidebar a[href="#${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add("active");
+          }
+        });
+      }, { rootMargin: "-10% 0px -80% 0px" });
+
+      sections.forEach(sec => observer.observe(sec));
+    });
+  </script>
+</body>
+</html>
