@@ -3,162 +3,303 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Service – Kawaii Doodle</title>
+  <title>Kawaii Doodle - Terms of Service</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
-    /* Reset and Base Styles */
-    * { 
-      box-sizing: border-box; 
-      margin: 0; 
-      padding: 0; 
+    /* Strict Legal Color Palette */
+    :root {
+      --bg-page: #ffffff;
+      --bg-sidebar: #f8f9fa;
+      --text-main: #111827; /* Near black for optimal reading contrast */
+      --text-muted: #4b5563;
+      --border-color: #e5e7eb;
+      --link-color: #2563eb; /* Trustworthy, standard blue */
+      --link-hover: #1d4ed8;
+      --highlight-bg: #eff6ff;
     }
+
+    /* Optimal Dark Mode (Deep Slate, NOT Pure Black) */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-page: #0d1117; /* Deep slate gray */
+        --bg-sidebar: #161b22;
+        --text-main: #e6edf3;
+        --text-muted: #8b949e;
+        --border-color: #30363d;
+        --link-color: #58a6ff;
+        --link-hover: #79c0ff;
+        --highlight-bg: #1f2937;
+      }
+    }
+
+    /* Absolute Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: #f4f4f5; /* Clean, neutral gray background */
-      color: #3f3f46; /* Soft black for high readability without harsh contrast */
-      line-height: 1.65;
-      padding: 40px 20px;
+      font-family: 'Lora', Georgia, serif; /* Serif font gives undeniable legal authority */
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.8;
+      font-size: 1.05rem;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Document Container */
-    .container { 
-      max-width: 800px; 
-      margin: 0 auto; 
-      background: #ffffff;
-      padding: 3rem 4rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-      border-top: 6px solid #ec4899; /* Tasteful brand accent color */
+    /* Header & Document Meta */
+    .legal-header {
+      background-color: var(--bg-page);
+      border-bottom: 2px solid var(--text-main); /* Thick authoritative border */
+      padding: 3rem 2rem;
+      text-align: center;
+      font-family: 'Inter', sans-serif; /* Sans-serif for rigid structure */
     }
 
-    /* Typography */
-    h1 { 
-      font-size: 2.25rem; 
-      color: #18181b; 
+    .project-name {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .legal-header h1 {
+      font-size: 2.5rem;
       font-weight: 700;
       letter-spacing: -0.02em;
-      margin-bottom: 0.25rem; 
-    }
-    
-    .subtitle { 
-      color: #71717a; 
-      font-size: 0.875rem; 
-      font-weight: 500;
-      margin-bottom: 2.5rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid #e4e4e7;
-    }
-    
-    h2 {
-      font-size: 1.25rem;
-      color: #27272a;
-      font-weight: 600;
-      margin: 2.5rem 0 1rem;
-    }
-    
-    p { 
-      margin-bottom: 1.25rem; 
+      color: var(--text-main);
+      margin-bottom: 1rem;
     }
 
-    strong {
-      color: #18181b;
-      font-weight: 600;
+    .document-meta {
+      display: inline-flex;
+      gap: 2rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      background: var(--bg-sidebar);
     }
-    
-    /* Lists */
-    ul { 
-      padding-left: 1.5rem; 
-      margin-bottom: 1.5rem; 
+
+    /* Layout */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 4rem;
+      align-items: start;
     }
-    
-    ul li { 
-      margin-bottom: 0.5rem; 
+
+    /* Rigid Sidebar */
+    .sidebar {
+      position: sticky;
+      top: 2rem;
+      font-family: 'Inter', sans-serif;
     }
-    
-    /* Links */
-    a { 
-      color: #db2777; 
+
+    .sidebar h3 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .sidebar ul { list-style: none; }
+
+    .sidebar li a {
+      display: block;
+      padding: 0.5rem 0.75rem;
+      color: var(--text-muted);
       text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s ease;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      transition: all 0.2s;
+      margin-left: -0.75rem;
     }
 
-    a:hover {
-      color: #be185d;
+    .sidebar li a:hover, .sidebar li a.active {
+      background-color: var(--highlight-bg);
+      color: var(--link-color);
+      font-weight: 500;
+    }
+
+    /* Formal Content Formatting */
+    .document-body section {
+      margin-bottom: 3.5rem;
+      scroll-margin-top: 2rem;
+    }
+
+    .document-body h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .document-body p {
+      margin-bottom: 1.5rem;
+    }
+
+    .document-body strong {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .document-body ul {
+      margin-bottom: 1.5rem;
+      padding-left: 2rem;
+    }
+
+    .document-body li {
+      margin-bottom: 0.5rem;
+      padding-left: 0.5rem;
+    }
+
+    .document-body a {
+      color: var(--link-color);
       text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .document-body a:hover {
+      color: var(--link-hover);
     }
     
     /* Footer */
-    .footer { 
-      margin-top: 4rem; 
-      font-size: 0.875rem; 
-      color: #a1a1aa; 
-      text-align: center; 
-      border-top: 1px solid #e4e4e7;
-      padding-top: 2rem;
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      margin-top: 2rem;
     }
 
-    /* Responsive adjustments for mobile */
-    @media (max-width: 600px) {
-      .container {
-        padding: 2rem 1.5rem;
-      }
-      h1 {
-        font-size: 1.75rem;
-      }
+    /* Print Optimization */
+    @media print {
+      body { background: white; color: black; font-size: 12pt; }
+      .sidebar { display: none; }
+      .container { display: block; padding: 0; }
+      .document-body h2 { border-bottom: 1px solid black; }
+      footer { display: none; }
+      @page { margin: 1in; }
+    }
+
+    /* Mobile */
+    @media (max-width: 850px) {
+      .container { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.5rem; }
+      .sidebar { display: none; }
+      .legal-header { padding: 2rem 1rem; }
+      .document-meta { flex-direction: column; gap: 0.5rem; align-items: center; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-<div class="container">
-  <h1>Terms of Service</h1>
-  <p class="subtitle">Kawaii Doodle &nbsp;·&nbsp; Last updated: April 1, 2026</p>
+  <header class="legal-header">
+    <div class="project-name">Kawaii Doodle</div>
+    <h1>Terms of Service</h1>
+    <div class="document-meta">
+      <span><strong>Document ID:</strong> TOS-2026-V1.4</span>
+      <span><strong>Effective Date:</strong> April 1, 2026</span>
+    </div>
+  </header>
 
-  <p>
-    Welcome to Kawaii Doodle! These Terms of Service ("Terms") govern your access to and use of the Kawaii Doodle mobile application and services. By downloading, accessing, or using our app, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use Kawaii Doodle.
-  </p>
+  <div class="container">
+    
+    <aside class="sidebar">
+      <h3>Index</h3>
+      <ul id="toc">
+        <li><a href="#introduction" class="active">Introduction</a></li>
+        <li><a href="#eligibility">1. Eligibility</a></li>
+        <li><a href="#accounts">2. User Accounts</a></li>
+        <li><a href="#content-policy">3. Content Policy</a></li>
+        <li><a href="#safety">4. Safety & Reporting</a></li>
+        <li><a href="#subscriptions">5. Subscriptions</a></li>
+      </ul>
+    </aside>
 
-  <h2>1. Eligibility</h2>
-  <p>
-    You must be at least <strong>13 years old</strong> to use Kawaii Doodle. By using the app, you represent and warrant that you meet this age requirement and have the legal capacity to enter into these Terms.
-  </p>
+    <main class="document-body">
+      
+      <section id="introduction">
+        <p>Welcome to Kawaii Doodle! These Terms of Service ("Terms") constitute a legally binding agreement concerning your access to and use of the Kawaii Doodle mobile application and services. By downloading, accessing, or using our app, you agree to be bound by these Terms. If you do not agree to all of these Terms, then you are expressly prohibited from using the application.</p>
+      </section>
 
-  <h2>2. User Accounts</h2>
-  <p>
-    To use Kawaii Doodle, you must create an account using Google Sign-In. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to notify us immediately of any unauthorized use of your account.
-  </p>
+      <section id="eligibility">
+        <h2>1. Eligibility</h2>
+        <p>You must be at least <strong>13 years old</strong> to use Kawaii Doodle. By using the application, you represent and warrant that you meet this age requirement and have the legal capacity to enter into these Terms.</p>
+      </section>
 
-  <h2>3. User-Generated Content (UGC) Policy</h2>
-  <p>
-    Kawaii Doodle allows you to create, send, and receive drawings ("Doodles"). We have a <strong>zero-tolerance policy</strong> for objectionable content and abusive users. By creating Doodles, you agree that you will <strong>not</strong> create or share content that:
-  </p>
-  <ul>
-    <li>Is sexually explicit, pornographic, or contains nudity.</li>
-    <li>Promotes violence, self-harm, or illegal activities.</li>
-    <li>Contains hate speech, harassment, bullying, or threats against individuals or groups.</li>
-    <li>Infringes on the intellectual property rights of others.</li>
-  </ul>
-  <p>
-    <strong>Enforcement:</strong> We reserve the right to review, remove, or delete any content that violates these Terms at any time, without prior notice. Users found violating these rules will have their accounts permanently banned.
-  </p>
+      <section id="accounts">
+        <h2>2. User Accounts</h2>
+        <p>To use Kawaii Doodle, you must create an account using Google Sign-In. You are solely responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to notify us immediately of any unauthorized use of your account or any other breach of security.</p>
+      </section>
 
-  <h2>4. Reporting and Removing Friends</h2>
-  <p>
-    To ensure a safe and friendly environment, Kawaii Doodle provides built-in safety features to control who you interact with:
-  </p>
-  <ul>
-    <li><strong>Report:</strong> If you receive an inappropriate Doodle, you can report it directly within the app using the "Report" button. Our moderation team will review the content within 24 hours and take action, which may include removing the content and banning the offending user.</li>
-    <li><strong>Remove Friend:</strong> You can remove any user from your friends list at any time. Once removed, that user will no longer be able to send you Doodles or interact with your account.</li>
-  </ul>
+      <section id="content-policy">
+        <h2>3. User-Generated Content (UGC) Policy</h2>
+        <p>Kawaii Doodle allows you to create, send, and receive digital drawings ("Doodles"). We maintain a <strong>zero-tolerance policy</strong> for objectionable content and abusive behavior. By creating Doodles, you explicitly agree that you will <strong>not</strong> create or distribute content that:</p>
+        <ul>
+          <li>Is sexually explicit, pornographic, or contains depictions of nudity.</li>
+          <li>Promotes violence, self-harm, or illegal activities.</li>
+          <li>Contains hate speech, harassment, bullying, or threats directed at any individual or protected group.</li>
+          <li>Infringes upon the intellectual property rights, copyrights, or trademarks of others.</li>
+        </ul>
+        <p><strong>Enforcement Protocol:</strong> We reserve the right, in our sole discretion, to review, moderate, or delete any content that violates these Terms at any time, without prior notice. Users found to be in violation of this UGC policy will be subject to permanent account termination.</p>
+      </section>
 
-  <h2>5. Kawaii Premium Subscriptions</h2>
-  <p>
-    Kawaii Doodle offers optional premium features ("Kawaii Premium") via an auto-renewing subscription.
-  </p>
+      <section id="safety">
+        <h2>4. Safety and Reporting Mechanisms</h2>
+        <p>To maintain a secure environment, Kawaii Doodle provides users with built-in moderation tools to manage interactions:</p>
+        <ul>
+          <li><strong>Reporting:</strong> If you receive an inappropriate Doodle, you may flag it using the in-app "Report" function. Our moderation team will review flagged content within 24 hours and execute appropriate disciplinary action.</li>
+          <li><strong>Account Blocking:</strong> You maintain the right to remove any user from your connections list at any time. Upon removal, the restricted user will immediately lose the ability to transmit Doodles to your account.</li>
+        </ul>
+      </section>
 
-</div>
+      <section id="subscriptions">
+        <h2>5. Premium Subscriptions</h2>
+        <p>Kawaii Doodle offers optional enhanced functionality ("Kawaii Premium") via an auto-renewing subscription model. Subscription fees are billed to your designated payment method and will automatically renew unless canceled prior to the end of the current billing cycle.</p>
+      </section>
 
+    </main>
+  </div>
+  
+  <footer>
+    <p>&copy; 2026 Kawaii Doodle. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll(".document-body section");
+      const navLinks = document.querySelectorAll(".sidebar a");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(link => link.classList.remove("active"));
+            const activeLink = document.querySelector(`.sidebar a[href="#${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add("active");
+          }
+        });
+      }, { rootMargin: "-10% 0px -80% 0px" });
+
+      sections.forEach(sec => observer.observe(sec));
+    });
+  </script>
 </body>
 </html>
