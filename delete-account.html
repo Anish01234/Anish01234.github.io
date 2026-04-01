@@ -3,97 +3,285 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Delete Your Account – Kawaii Doodle</title>
+  <title>Account Deletion - Kawaii Doodle</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #fff9fb;
-      color: #333;
-      line-height: 1.7;
-      padding: 40px 20px;
+    :root {
+      --bg-page: #ffffff;
+      --bg-sidebar: #f8f9fa;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --border-color: #e5e7eb;
+      --link-color: #2563eb;
+      --warning-bg: #fff1f2;
+      --warning-border: #f43f5e;
+      --warning-text: #9f1239;
+      --success-bg: #f0fdf4;
+      --success-border: #22c55e;
+      --success-text: #166534;
     }
-    .container { max-width: 720px; margin: 0 auto; }
-    h1 { font-size: 2rem; color: #d63384; margin-bottom: 10px; }
-    .subtitle { color: #888; font-size: 0.9rem; margin-bottom: 30px; }
-    h2 { font-size: 1.15rem; color: #b02060; margin: 28px 0 12px; padding-bottom: 4px; border-bottom: 2px solid #fce4ec; }
-    p { margin-bottom: 12px; }
-    ol { padding-left: 20px; margin-bottom: 12px; }
-    ol li { margin-bottom: 10px; }
-    .warning { background: #ffe4e9; border-left: 4px solid #d63384; padding: 14px; margin: 20px 0; border-radius: 4px; }
-    .data-list { background: #f5f5f5; padding: 12px 16px; border-radius: 8px; margin: 12px 0; }
-    .data-list strong { color: #d63384; }
-    a { color: #d63384; }
-    .footer { margin-top: 40px; font-size: 0.85rem; color: #aaa; text-align: center; }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-page: #0d1117;
+        --bg-sidebar: #161b22;
+        --text-main: #e6edf3;
+        --text-muted: #8b949e;
+        --border-color: #30363d;
+        --link-color: #58a6ff;
+        --warning-bg: #2d161b;
+        --warning-border: #e11d48;
+        --warning-text: #fda4af;
+        --success-bg: #052e16;
+        --success-border: #15803d;
+        --success-text: #bbf7d0;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.8;
+      font-size: 1.05rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Official Header */
+    .legal-header {
+      background-color: var(--bg-page);
+      border-bottom: 2px solid var(--text-main);
+      padding: 3rem 2rem;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .project-name {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .legal-header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .document-body h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin: 3rem 0 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .document-body h2:first-of-type { margin-top: 0; }
+
+    .document-body p { margin-bottom: 1.5rem; }
+
+    /* Instructions List */
+    .instruction-list {
+      counter-reset: step;
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .instruction-list li {
+      position: relative;
+      padding-left: 3rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .instruction-list li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0.2rem;
+      width: 1.8rem;
+      height: 1.8rem;
+      background: var(--text-main);
+      color: var(--bg-page);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.875rem;
+    }
+
+    /* Callout Boxes */
+    .callout {
+      padding: 1.5rem;
+      border-radius: 6px;
+      border-left: 4px solid;
+      margin: 2rem 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+    }
+
+    .callout.warning {
+      background-color: var(--warning-bg);
+      border-left-color: var(--warning-border);
+      color: var(--warning-text);
+    }
+
+    .callout.success {
+      background-color: var(--success-bg);
+      border-left-color: var(--success-border);
+      color: var(--success-text);
+    }
+
+    .callout strong { display: block; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* Grid for data list */
+    .data-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .data-card {
+      background: var(--bg-sidebar);
+      padding: 1.5rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+    }
+
+    .data-card h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .data-card ul {
+      list-style: none;
+      font-size: 0.9rem;
+    }
+
+    .data-card li { margin-bottom: 0.5rem; padding-left: 1.2rem; position: relative; }
+    .data-card li::before { content: "→"; position: absolute; left: 0; color: var(--text-muted); }
+
+    .document-body a {
+      color: var(--link-color);
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 650px) {
+      .data-grid { grid-template-columns: 1fr; }
+      .legal-header h1 { font-size: 2rem; }
+    }
   </style>
 </head>
 <body>
-<div class="container">
 
-  <h1>🗑️ How to Delete Your Account</h1>
-  <p class="subtitle">Kawaii Doodle — Complete Data Deletion Guide</p>
+  <header class="legal-header">
+    <div class="project-name">Kawaii Doodle</div>
+    <h1>Account Deletion</h1>
+    <p style="color: var(--text-muted); font-size: 0.9rem; font-family: 'Inter', sans-serif;">Data Removal and Retention Policy</p>
+  </header>
 
-  <h2>In-App Account Deletion (Recommended)</h2>
-  <p>The easiest way to delete your account is directly in the Kawaii Doodle app:</p>
-  <ol>
-    <li>Open <strong>Kawaii Doodle</strong></li>
-    <li>Tap your <strong>Profile</strong> icon (bottom right)</li>
-    <li>Scroll to the bottom and tap <strong>Delete Account</strong></li>
-    <li>Read the first warning dialog and tap <strong>Continue</strong></li>
-    <li>Read the final confirmation and tap <strong>Delete Everything</strong></li>
-    <li>Your account and all data will be permanently deleted</li>
-  </ol>
+  <div class="container">
+    <main class="document-body">
+      
+      <h2>In-App Deletion (Primary Method)</h2>
+      <p>Users may initiate a complete account and data deletion request directly through the Kawaii Doodle mobile application. This is the fastest and most secure method of removal.</p>
+      
+      <ol class="instruction-list">
+        <li>Launch the <strong>Kawaii Doodle</strong> application on your device.</li>
+        <li>Navigate to your <strong>Profile</strong> (bottom right navigation).</li>
+        <li>Select <strong>Delete Account</strong> at the bottom of the profile menu.</li>
+        <li>Review the impact of deletion and select <strong>Continue</strong>.</li>
+        <li>Confirm your intent by selecting <strong>Delete Everything</strong>.</li>
+      </ol>
 
-  <div class="warning">
-    <strong>⚠️ Warning:</strong> Account deletion is <strong>permanent and cannot be undone</strong>. 
-    All your doodles, friends list, and account data will be destroyed immediately.
+      <div class="callout warning">
+        <strong>Irrevocable Action</strong>
+        Deletion is permanent. Once the process is finalized, Kawaii Doodle cannot restore your account, recover lost drawings, or reinstate connection lists.
+      </div>
+
+      <h2>Data Impact Analysis</h2>
+      <p>The following table outlines how your data is handled upon the successful execution of a deletion request.</p>
+      
+      <div class="data-grid">
+        <div class="data-card">
+          <h4>Purged Items</h4>
+          <ul>
+            <li>User Profile (Name, ID, Avatar)</li>
+            <li>Inbound Doodle Inbox</li>
+            <li>Active Connections (Friends List)</li>
+            <li>Local and Cloud Auth Credentials</li>
+            <li>Unsent Drafts and Temporary Files</li>
+          </ul>
+        </div>
+        <div class="data-card">
+          <h4>Residual Records</h4>
+          <ul>
+            <li>Doodles sent to other users*</li>
+            <li>Recipient Inbox History</li>
+            <li>Aggregated, anonymous analytics</li>
+          </ul>
+        </div>
+      </div>
+      <p><small>*Note: Per our privacy policy, when a Doodle is sent to a recipient, a copy is generated for their inbox. These copies remain accessible to the recipient even after the sender's account is purged.</small></p>
+
+      <h2>Retention and Purge Timeline</h2>
+      <p>Upon confirmation, your primary account records are restricted and removed from active production databases immediately. Residual data stored in encrypted off-site backups is systematically purged within a <strong>30-day window</strong> to ensure complete data sanitization.</p>
+
+      <h2>Manual Deletion Requests</h2>
+      <p>If you are unable to access the mobile application, you may submit a formal deletion request via email. To verify your identity, please contact us from the email address associated with your account:</p>
+      
+      <div class="callout success">
+        <strong>Submit Request</strong>
+        <a href="mailto:kawaiiidcontact@gmail.com">kawaiiidcontact@gmail.com</a><br>
+        <em>Please include your Kawaii ID if available. Processing time: 7 business days.</em>
+      </div>
+
+      <p>For more details on how we handle your information, please refer to our <a href="https://anish01234.github.io/privacy-policy.html">Privacy Policy</a>.</p>
+
+    </main>
   </div>
 
-  <h2>What Gets Deleted</h2>
-  <p>When you delete your Kawaii Doodle account, the following data is permanently removed:</p>
-  <div class="data-list">
-    <p><strong>✓ Deleted immediately:</strong></p>
-    <ul style="margin-left: 16px;">
-      <li>Your profile (name, username, Kawaii ID, avatar)</li>
-      <li>All doodles you sent to friends</li>
-      <li>All doodles in your inbox from friends</li>
-      <li>Your complete friends list</li>
-      <li>Draft doodles (unsent)</li>
-      <li>Your auth account and login credentials</li>
-    </ul>
-  </div>
+  <footer>
+    <p>&copy; 2026 Kawaii Doodle. All rights reserved.</p>
+  </footer>
 
-  <h2>What Gets Kept</h2>
-  <p>The following is <strong>not</strong> deleted when you delete your account:</p>
-  <ul style="margin-left: 16px; margin-bottom: 12px;">
-    <li>Doodles you sent to others will remain in <strong>their inboxes</strong> (they own copies)</li>
-    <li>Your friends will still have records of past doodles you sent them</li>
-  </ul>
-
-  <h2>Data Retention Timeline</h2>
-  <p>
-    Account deletion happens immediately in-app. Any residual data in backup systems 
-    is permanently purged within <strong>30 days</strong>.
-  </p>
-
-  <h2>Request Deletion by Email</h2>
-  <p>
-    If you cannot delete your account through the app, you can request deletion by emailing:
-  </p>
-  <p style="text-align: center; font-weight: bold; margin: 16px 0;">
-    <a href="mailto:kawaiiidcontact@gmail.com">kawaiiidcontact@gmail.com</a>
-  </p>
-  <p>
-    Include your Kawaii ID or the email address associated with your account. 
-    We will process deletion requests within 7 days.
-  </p>
-
-  <h2>Questions?</h2>
-  <p>
-    For more information, see our <a href="https://anish01234.github.io/privacy-policy.html">Privacy Policy</a>.
-  </p>
-
-  <div class="footer">© 2025 Kawaii Doodle. All rights reserved.</div>
-</div>
 </body>
 </html>
