@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
-
   <style>
     /* Strict Legal Color Palette */
     :root {
@@ -21,7 +20,6 @@
       --link-hover: #1d4ed8;
       --highlight-bg: #eff6ff;
     }
-
     /* Optimal Dark Mode */
     @media (prefers-color-scheme: dark) {
       :root {
@@ -35,7 +33,6 @@
         --highlight-bg: #1f2937;
       }
     }
-
     /* Absolute Reset */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -48,7 +45,6 @@
       font-size: 1.05rem;
       -webkit-font-smoothing: antialiased;
     }
-
     /* Header & Document Meta */
     .legal-header {
       background-color: var(--bg-page);
@@ -57,7 +53,6 @@
       text-align: center;
       font-family: 'Inter', sans-serif;
     }
-
     .project-name {
       font-size: 0.875rem;
       text-transform: uppercase;
@@ -66,7 +61,6 @@
       font-weight: 600;
       margin-bottom: 1rem;
     }
-
     .legal-header h1 {
       font-size: 2.5rem;
       font-weight: 700;
@@ -74,7 +68,6 @@
       color: var(--text-main);
       margin-bottom: 1rem;
     }
-
     .document-meta {
       display: inline-flex;
       gap: 2rem;
@@ -85,7 +78,6 @@
       border-radius: 4px;
       background: var(--bg-sidebar);
     }
-
     /* Layout */
     .container {
       max-width: 1100px;
@@ -96,14 +88,12 @@
       gap: 4rem;
       align-items: start;
     }
-
     /* Rigid Sidebar */
     .sidebar {
       position: sticky;
       top: 2rem;
       font-family: 'Inter', sans-serif;
     }
-
     .sidebar h3 {
       font-size: 0.75rem;
       text-transform: uppercase;
@@ -113,9 +103,7 @@
       padding-bottom: 0.5rem;
       border-bottom: 1px solid var(--border-color);
     }
-
     .sidebar ul { list-style: none; }
-
     .sidebar li a {
       display: block;
       padding: 0.5rem 0.75rem;
@@ -126,19 +114,16 @@
       transition: all 0.2s;
       margin-left: -0.75rem;
     }
-
     .sidebar li a:hover, .sidebar li a.active {
       background-color: var(--highlight-bg);
       color: var(--link-color);
       font-weight: 500;
     }
-
     /* Formal Content Formatting */
     .document-body section {
       margin-bottom: 3.5rem;
       scroll-margin-top: 2rem;
     }
-
     .document-body h2 {
       font-family: 'Inter', sans-serif;
       font-size: 1.25rem;
@@ -148,33 +133,27 @@
       padding-bottom: 0.5rem;
       border-bottom: 1px solid var(--border-color);
     }
-
     .document-body p {
       margin-bottom: 1.5rem;
     }
-
     .document-body strong {
       font-weight: 600;
       color: var(--text-main);
     }
-
     .document-body ul {
       margin-bottom: 1.5rem;
       padding-left: 2rem;
     }
-
     .document-body li {
       margin-bottom: 0.5rem;
       padding-left: 0.5rem;
     }
-
     .document-body a {
       color: var(--link-color);
       text-decoration: underline;
       text-decoration-thickness: 1px;
       text-underline-offset: 3px;
     }
-
     .document-body a:hover {
       color: var(--link-hover);
     }
@@ -189,7 +168,6 @@
       border-top: 1px solid var(--border-color);
       margin-top: 2rem;
     }
-
     /* Print Optimization */
     @media print {
       body { background: white; color: black; font-size: 12pt; }
@@ -199,7 +177,6 @@
       footer { display: none; }
       @page { margin: 1in; }
     }
-
     /* Mobile */
     @media (max-width: 850px) {
       .container { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.5rem; }
@@ -210,16 +187,14 @@
   </style>
 </head>
 <body>
-
   <header class="legal-header">
     <div class="project-name">Kawaii Doodle</div>
     <h1>Privacy Policy</h1>
     <div class="document-meta">
-      <span><strong>Document ID:</strong> PRIV-2025-V1.2</span>
-      <span><strong>Effective Date:</strong> March 31, 2025</span>
+      <span><strong>Document ID:</strong> PRIV-2025-V1.3</span>
+      <span><strong>Effective Date:</strong> April 21, 2025</span>
     </div>
   </header>
-
   <div class="container">
     
     <aside class="sidebar">
@@ -230,27 +205,25 @@
         <li><a href="#information-collected">2. Information We Collect</a></li>
         <li><a href="#usage">3. How We Use Information</a></li>
         <li><a href="#third-party">4. Third-Party Services</a></li>
-        <li><a href="#background-processing">5. Push Notifications</a></li>
-        <li><a href="#data-retention">6. Data Retention</a></li>
-        <li><a href="#rights-choices">7. Your Rights & Choices</a></li>
-        <li><a href="#data-security">8. Data Security</a></li>
-        <li><a href="#policy-changes">9. Changes to Policy</a></li>
-        <li><a href="#reporting">10. Child Safety & Reporting</a></li>
-        <li><a href="#contact">11. Contact Us</a></li>
+        <li><a href="#advertising">5. Advertising</a></li>
+        <li><a href="#background-processing">6. Push Notifications</a></li>
+        <li><a href="#data-retention">7. Data Retention</a></li>
+        <li><a href="#rights-choices">8. Your Rights &amp; Choices</a></li>
+        <li><a href="#data-security">9. Data Security</a></li>
+        <li><a href="#policy-changes">10. Changes to Policy</a></li>
+        <li><a href="#reporting">11. Child Safety &amp; Reporting</a></li>
+        <li><a href="#contact">12. Contact Us</a></li>
       </ul>
     </aside>
-
     <main class="document-body">
       
       <section id="introduction">
         <p>Welcome to Kawaii Doodle ("we", "us", or "our"). This Privacy Policy explains what information we collect when you use our Android application, how we use it, and your rights regarding your data. By using Kawaii Doodle, you explicitly agree to the collection and use of information in accordance with this policy.</p>
       </section>
-
       <section id="eligibility">
         <h2>1. Who Can Use This App</h2>
         <p>Kawaii Doodle is intended for users who are <strong>13 years of age or older</strong>. We do not knowingly collect personal information from children under 13. If you are under 13, please do not use this app. If we become aware that we have collected data from a child under 13 without verification of parental consent, we will delete that information promptly. Parents or guardians who believe their child has provided us with personal information may contact us at <a href="mailto:kawaiiidcontact@gmail.com">kawaiiidcontact@gmail.com</a>.</p>
       </section>
-
       <section id="information-collected">
         <h2>2. Information We Collect</h2>
         <p>We collect the following information when you interact with Kawaii Doodle:</p>
@@ -260,11 +233,11 @@
           <li><strong>User-Generated Content:</strong> Drawings ("Doodles") you create and transmit within the application.</li>
           <li><strong>Social Data:</strong> Your friends list and user connections inside the app.</li>
           <li><strong>Device Tokens:</strong> A Firebase Cloud Messaging token utilized to deliver push notifications.</li>
+          <li><strong>Advertising Identifiers:</strong> Your Android Advertising ID (AAID), used by Google AdMob to serve and measure advertisements. This identifier may be reset at any time via your device settings.</li>
           <li><strong>Application Preferences:</strong> Settings such as dark mode, wallpaper preferences, and notification choices stored locally on your device.</li>
         </ul>
         <p>We do <strong>not</strong> collect your precise location, contacts, microphone, or camera data.</p>
       </section>
-
       <section id="usage">
         <h2>3. How We Use Your Information</h2>
         <p>The information we collect is used for the following purposes:</p>
@@ -274,80 +247,87 @@
           <li>To deliver push notifications regarding new Doodles and relevant account activity.</li>
           <li>To display and maintain your Doodle history and friend activity logs.</li>
           <li>To provide, manage, and process Kawaii Premium subscriptions.</li>
+          <li>To display optional rewarded advertisements via Google AdMob, allowing free users to earn bonus doodle sends.</li>
           <li>To respond to customer support inquiries and requests.</li>
         </ul>
         <p>We do <strong>not</strong> sell your personal information to third parties under any circumstances.</p>
       </section>
-
       <section id="third-party">
         <h2>4. Third-Party Services</h2>
         <p>Kawaii Doodle employs the following third-party service providers, each governed by their respective privacy policies:</p>
         <ul>
-          <li><strong>Google Sign-In:</strong> Utilized for secure authentication. <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
-          <li><strong>Firebase Cloud Messaging (FCM):</strong> Utilized to deliver push notifications. <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy</a></li>
-          <li><strong>Supabase:</strong> Serves as our backend database and API. Your data is securely stored on Supabase servers. <a href="https://supabase.com/privacy" target="_blank">Supabase Privacy Policy</a></li>
-          <li><strong>Google Play Billing:</strong> Utilized to securely process Kawaii Premium subscriptions. We do not store or process your direct payment details. <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&ldt=privacynotice" target="_blank">Google Payments Privacy Policy</a></li>
+          <li><strong>Google Sign-In:</strong> Utilized for secure authentication. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+          <li><strong>Firebase Cloud Messaging (FCM):</strong> Utilized to deliver push notifications. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Policy</a></li>
+          <li><strong>Supabase:</strong> Serves as our backend database and API. Your data is securely stored on Supabase servers. <a href="https://supabase.com/privacy" target="_blank" rel="noopener">Supabase Privacy Policy</a></li>
+          <li><strong>Google Play Billing:</strong> Utilized to securely process Kawaii Premium subscriptions. We do not store or process your direct payment details. <a href="https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&ldt=privacynotice" target="_blank" rel="noopener">Google Payments Privacy Policy</a></li>
+          <li><strong>Google AdMob:</strong> Utilized to display optional rewarded advertisements within the application. Google AdMob may collect and use your Android Advertising ID and other device information to serve personalized or non-personalized ads. <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google Ads Privacy Policy</a></li>
         </ul>
       </section>
-
+      <!-- ── NEW SECTION 5: Advertising ─────────────────────────────────────── -->
+      <section id="advertising">
+        <h2>5. Advertising</h2>
+        <p>Kawaii Doodle displays <strong>optional rewarded advertisements</strong> powered by <strong>Google AdMob</strong>. These ads are entirely voluntary — free users may choose to watch a rewarded ad to earn a bonus doodle send. No ads are shown to Kawaii Premium subscribers.</p>
+        <p><strong>What data is used for advertising:</strong> Google AdMob may use your Android Advertising ID (AAID) and general device information to serve advertisements. Depending on your consent choices (for users in the EEA, UK, and Switzerland under GDPR), these ads may be personalized based on your interests or served as non-personalized ads.</p>
+        <p><strong>Consent:</strong> Upon first launching the app, users in applicable regions are presented with a consent form powered by Google's User Messaging Platform (UMP). This form allows you to choose whether personalized advertising is permitted. Ads will only be loaded after your consent preference has been recorded. For users outside regulated regions, non-personalized ad requests may be made without an explicit consent prompt.</p>
+        <p><strong>How to opt out or change your ad preferences:</strong></p>
+        <ul>
+          <li><strong>In-App (EEA/UK/CH users):</strong> Navigate to <em>Profile → Ad Privacy Settings</em> to revisit and update your ad personalization choices at any time.</li>
+          <li><strong>Device-Level Opt-Out:</strong> On Android, go to <em>Settings → Privacy → Ads</em> and enable <strong>"Opt out of Ads Personalization"</strong> (Android 12 and below) or reset / delete your Advertising ID (Android 13+).</li>
+          <li><strong>Google Ad Settings:</strong> You may also manage your Google ad personalization preferences at <a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a>.</li>
+        </ul>
+        <p>Kawaii Doodle does not pass any personally identifiable information (such as your name or email address) to Google AdMob for advertising purposes. All data collection by Google AdMob is governed by the <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google Advertising Policies</a> and the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
+      </section>
+      <!-- ── END Advertising Section ─────────────────────────────────────────── -->
       <section id="background-processing">
-        <h2>5. Push Notifications and Background Processing</h2>
+        <h2>6. Push Notifications and Background Processing</h2>
         <p>Kawaii Doodle requests permission to send push notifications to inform you when a connection sends a Doodle. We also request the <strong>battery optimization exemption</strong> on Android to ensure Firebase Cloud Messaging can reliably deliver notifications even when the application is running in the background. This permission is used solely to maintain notification delivery infrastructure—we do not execute any other background activity. You may revoke notification permissions at any time via your device's operating system settings.</p>
       </section>
-
       <section id="data-retention">
-        <h2>6. Data Retention</h2>
+        <h2>7. Data Retention</h2>
         <p>We retain your data for the duration that your account remains active. Should you choose to delete your account, all associated data—including your profile, Doodle history, and connections list—will be permanently expunged from our servers within 30 days of the deletion request.</p>
       </section>
-
       <section id="rights-choices">
-        <h2>7. Your Rights and Choices</h2>
+        <h2>8. Your Rights and Choices</h2>
         <p>You maintain the following rights regarding your personal data:</p>
         <ul>
           <li><strong>Access:</strong> You may view your profile information and Doodle history directly within the application.</li>
           <li><strong>Data Deletion:</strong> Navigate to Profile → Delete Account to permanently remove all your data from our systems.</li>
           <li><strong>Subscription Management:</strong> Navigate to Profile → Manage Subscription to modify or cancel Kawaii Premium at any time.</li>
+          <li><strong>Ad Personalization:</strong> Navigate to Profile → Ad Privacy Settings (available for EEA/UK/CH users) to update your advertising consent choices.</li>
           <li><strong>Notification Opt-Out:</strong> You may disable push notifications entirely via your Android system settings.</li>
           <li><strong>Direct Inquiries:</strong> For any other data-related requests, please contact us at <a href="mailto:kawaiiidcontact@gmail.com">kawaiiidcontact@gmail.com</a>.</li>
         </ul>
       </section>
-
       <section id="data-security">
-        <h2>8. Data Security</h2>
+        <h2>9. Data Security</h2>
         <p>We implement industry-standard security practices, including encrypted connections (HTTPS/TLS), for all data transmitted between the application and our servers. Access to user data is strictly limited to authorized services necessary for app functionality. While no method of transmission over the internet or electronic storage is 100% secure, we undertake commercially reasonable steps to protect your personal information.</p>
       </section>
-
       <section id="policy-changes">
-        <h2>9. Changes to This Policy</h2>
+        <h2>10. Changes to This Policy</h2>
         <p>We reserve the right to modify or update this Privacy Policy periodically. Upon doing so, we will amend the "Effective Date" at the top of this document. Your continued use of the application following such changes constitutes your acceptance of the revised policy. For material changes, we will provide notification via the application or email.</p>
       </section>
-
       <section id="reporting">
-        <h2>10. Child Safety & Reporting</h2>
+        <h2>11. Child Safety &amp; Reporting</h2>
         <p>Kawaii Doodle strictly complies with all relevant child safety laws and has published standards prohibiting <strong>Child Sexual Abuse and Exploitation (CSAE)</strong>. We maintain a zero-tolerance policy toward any form of abuse.</p>
         <p><strong>In-App Feedback Mechanism:</strong> If you encounter Doodles or user behavior that violates our policies, we provide a direct in-app mechanism for user feedback. Navigate to the History tab, select the three-dot menu adjacent to the respective Doodle, and select "Report" to immediately notify our moderation team.</p>
-        <p><strong>Addressing CSAM:</strong> We are committed to taking appropriate action to address <strong>Child Sexual Abuse Material (CSAM)</strong>. Any user found distributing, promoting, or interacting with CSAM will be immediately and permanently banned. We actively report all instances of CSAM to the relevant regional and national authorities, including the National Center for Missing & Exploited Children (NCMEC).</p>
+        <p><strong>Addressing CSAM:</strong> We are committed to taking appropriate action to address <strong>Child Sexual Abuse Material (CSAM)</strong>. Any user found distributing, promoting, or interacting with CSAM will be immediately and permanently banned. We actively report all instances of CSAM to the relevant regional and national authorities, including the National Center for Missing &amp; Exploited Children (NCMEC).</p>
         <p><strong>Child Safety Point of Contact:</strong> Our designated point of contact is ready and able to speak about our app's CSAM prevention practices and compliance. For any child safety concerns, please reach out to us at <a href="mailto:kawaiiidcontact@gmail.com">kawaiiidcontact@gmail.com</a>.</p>
       </section>
-
       <section id="contact">
-        <h2>11. Contact Us</h2>
+        <h2>12. Contact Us</h2>
         <p>If you have any questions, concerns, or formal data requests regarding this Privacy Policy, please contact our support team at:<br />
         <a href="mailto:kawaiiidcontact@gmail.com">kawaiiidcontact@gmail.com</a></p>
       </section>
-
     </main>
   </div>
   
   <footer>
     <p>&copy; 2025 Kawaii Doodle. All rights reserved.</p>
   </footer>
-
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const sections = document.querySelectorAll(".document-body section");
       const navLinks = document.querySelectorAll(".sidebar a");
-
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -357,7 +337,6 @@
           }
         });
       }, { rootMargin: "-10% 0px -80% 0px" });
-
       sections.forEach(sec => observer.observe(sec));
     });
   </script>
