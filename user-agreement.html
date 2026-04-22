@@ -14,10 +14,10 @@
     :root {
       --bg-page: #ffffff;
       --bg-sidebar: #f8f9fa;
-      --text-main: #111827; /* Near black for optimal reading contrast */
+      --text-main: #111827;
       --text-muted: #4b5563;
       --border-color: #e5e7eb;
-      --link-color: #2563eb; /* Trustworthy, standard blue */
+      --link-color: #2563eb;
       --link-hover: #1d4ed8;
       --highlight-bg: #eff6ff;
     }
@@ -25,7 +25,7 @@
     /* Optimal Dark Mode (Deep Slate, NOT Pure Black) */
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg-page: #0d1117; /* Deep slate gray */
+        --bg-page: #0d1117;
         --bg-sidebar: #161b22;
         --text-main: #e6edf3;
         --text-muted: #8b949e;
@@ -41,7 +41,7 @@
     html { scroll-behavior: smooth; }
     
     body {
-      font-family: 'Lora', Georgia, serif; /* Serif font gives undeniable legal authority */
+      font-family: 'Lora', Georgia, serif;
       background-color: var(--bg-page);
       color: var(--text-main);
       line-height: 1.8;
@@ -52,10 +52,10 @@
     /* Header & Document Meta */
     .legal-header {
       background-color: var(--bg-page);
-      border-bottom: 2px solid var(--text-main); /* Thick authoritative border */
+      border-bottom: 2px solid var(--text-main);
       padding: 3rem 2rem;
       text-align: center;
-      font-family: 'Inter', sans-serif; /* Sans-serif for rigid structure */
+      font-family: 'Inter', sans-serif;
     }
 
     .project-name {
@@ -215,8 +215,8 @@
     <div class="project-name">Kawaii Doodle</div>
     <h1>Terms of Service</h1>
     <div class="document-meta">
-      <span><strong>Document ID:</strong> TOS-2026-V1.4</span>
-      <span><strong>Effective Date:</strong> April 1, 2026</span>
+      <span><strong>Document ID:</strong> TOS-2026-V1.5</span>
+      <span><strong>Effective Date:</strong> April 22, 2026</span>
     </div>
   </header>
 
@@ -228,8 +228,8 @@
         <li><a href="#introduction" class="active">Introduction</a></li>
         <li><a href="#eligibility">1. Eligibility</a></li>
         <li><a href="#accounts">2. User Accounts</a></li>
-        <li><a href="#content-policy">3. Content Policy</a></li>
-        <li><a href="#safety">4. Safety, Child Protection & Reporting</a></li>
+        <li><a href="#content-policy">3. Content & Community Policy</a></li>
+        <li><a href="#safety">4. Safety, Moderation & Reporting</a></li>
         <li><a href="#subscriptions">5. Subscriptions</a></li>
       </ul>
     </aside>
@@ -251,24 +251,29 @@
       </section>
 
       <section id="content-policy">
-        <h2>3. User-Generated Content (UGC) Policy</h2>
-        <p>Kawaii Doodle allows you to create, send, and receive digital drawings ("Doodles"). We maintain a <strong>zero-tolerance policy</strong> for objectionable content and abusive behavior. By creating Doodles, you explicitly agree that you will <strong>not</strong> create or distribute content that:</p>
+        <h2>3. Content & Community Policy (UGC)</h2>
+        <p>Kawaii Doodle allows you to create, send, and publish digital drawings ("Doodles") and text comments within our public Community Feed. By submitting content to the public feed, you acknowledge that your profile information, Doodles, and comments will be visible to all users of the application.</p>
+        
+        <p><strong>License to Kawaii Doodle:</strong> You retain ownership of your original Doodles. However, by sharing content to the public Community Feed, you grant us a worldwide, non-exclusive, royalty-free license to use, display, distribute, and perform that content within the application to provide the service.</p>
+
+        <p><strong>Prohibited Conduct:</strong> We maintain a <strong>zero-tolerance policy</strong> for objectionable content and abusive behavior. Whether interacting privately with friends or publicly in the Community Feed, you explicitly agree that you will <strong>not</strong> create, publish, or distribute content (doodles or text) that:</p>
         <ul>
           <li>Is sexually explicit, pornographic, or contains depictions of nudity.</li>
           <li>Promotes violence, self-harm, or illegal activities.</li>
           <li>Contains hate speech, harassment, bullying, or threats directed at any individual or protected group.</li>
           <li>Infringes upon the intellectual property rights, copyrights, or trademarks of others.</li>
+          <li>Constitutes spam, unauthorized advertising, or excessive repetitive posting.</li>
         </ul>
-        <p><strong>Enforcement Protocol:</strong> We reserve the right, in our sole discretion, to review, moderate, or delete any content that violates these Terms at any time, without prior notice. Users found to be in violation of this UGC policy will be subject to permanent account termination.</p>
+        <p><strong>Enforcement Protocol:</strong> We reserve the right, in our sole discretion, to review, moderate, or delete any Doodles or comments that violate these Terms at any time, without prior notice. Users found to be in violation of this UGC policy will be subject to permanent account termination.</p>
       </section>
 
       <section id="safety">
-        <h2>4. Safety, Child Protection & Reporting</h2>
+        <h2>4. Safety, Moderation & Reporting</h2>
         <p>Kawaii Doodle strictly complies with all relevant child safety laws and has published standards prohibiting <strong>Child Sexual Abuse and Exploitation (CSAE)</strong>. We maintain a zero-tolerance policy toward any form of abuse.</p>
-        <p>To maintain a secure environment, Kawaii Doodle provides users with built-in moderation tools to manage interactions:</p>
+        <p>To maintain a secure environment, Kawaii Doodle provides users with built-in moderation tools to manage interactions across both private messages and the public Community Feed:</p>
         <ul>
-          <li><strong>In-App Reporting Mechanism:</strong> If you receive an inappropriate Doodle or encounter user behavior that violates our policies, you may flag it using the in-app "Report" function. Our moderation team will review flagged content within 24 hours and execute appropriate disciplinary action.</li>
-          <li><strong>Account Blocking:</strong> You maintain the right to remove any user from your connections list at any time. Upon removal, the restricted user will immediately lose the ability to transmit Doodles to your account.</li>
+          <li><strong>In-App Reporting Mechanism:</strong> If you encounter an inappropriate Doodle or comment, you may flag it using the in-app "Report" function. Our moderation team will review flagged content within 24 hours and execute appropriate disciplinary action, up to and including content deletion and permanent user bans.</li>
+          <li><strong>Account Blocking:</strong> You maintain the right to block any user at any time. Upon blocking, the restricted user will immediately lose the ability to transmit Doodles to your account, and their public Community content will be hidden from your view.</li>
         </ul>
         <p><strong>Addressing CSAM:</strong> We are committed to taking appropriate action to address <strong>Child Sexual Abuse Material (CSAM)</strong>. Any user found distributing, promoting, or interacting with CSAM will be immediately and permanently banned. We actively report all instances of CSAM to the relevant regional and national authorities, including the National Center for Missing & Exploited Children (NCMEC).</p>
         <p><strong>Child Safety Point of Contact:</strong> Our designated point of contact is ready and able to speak about our app's CSAM prevention practices and compliance. For any child safety concerns, please reach out to us at <a href="mailto:kawaiiidcontact@gmail.com">kawaiiidcontact@gmail.com</a>.</p>
