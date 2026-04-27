@@ -20,45 +20,31 @@
       box-sizing: border-box;
     }
     h1 { font-size: 2rem; margin: 0 0 8px; }
-    p  { font-size: 1rem; opacity: 0.75; margin: 0 0 32px; }
-    a  {
-      display: inline-block;
-      background: #1A1A2E;
-      color: #FFF;
-      text-decoration: none;
-      padding: 14px 32px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 1rem;
-    }
+    p  { font-size: 1rem; opacity: 0.75; margin: 0; }
   </style>
   <script>
     (function () {
       var params = new URLSearchParams(window.location.search);
       var userId = params.get('id') || '';
+      var playStore = 'https://play.google.com/store/apps/details?id=com.kawaii.doodle';
 
-      // If the app is installed, the custom scheme may open it directly.
-      // We attempt it silently then fall through to the Play Store after a short delay.
+      // When the app IS installed, Android App Links intercepts the HTTPS URL at
+      // the OS level before this page ever loads — so we never reach here.
+      // When the app is NOT installed, redirect straight to the Play Store.
       if (userId) {
-        var appUri = 'com.kawaii.doodle://profile/' + encodeURIComponent(userId);
+        // Silently attempt custom scheme in case App Link verification isn't active yet.
         var iframe = document.createElement('iframe');
         iframe.style.display = 'none';
-        iframe.src = appUri;
+        iframe.src = 'com.kawaii.doodle://profile/' + encodeURIComponent(userId);
         document.body.appendChild(iframe);
       }
 
-      var playStore = 'https://play.google.com/store/apps/details?id=com.kawaii.doodle';
-      setTimeout(function () {
-        window.location.replace(playStore);
-      }, 1800);
+      window.location.replace(playStore);
     })();
   </script>
 </head>
 <body>
   <h1>🎨 Kawaii Doodle</h1>
-  <p>Opening the app&hellip;</p>
-  <a href="https://play.google.com/store/apps/details?id=com.kawaii.doodle">
-    Get Kawaii Doodle on Google Play
-  </a>
+  <p>Redirecting…</p>
 </body>
 </html>
