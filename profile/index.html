@@ -1,50 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kawaii Doodle</title>
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #FFC1E3, #B39DDB, #80DEEA);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: #1A1A2E;
-      text-align: center;
-      padding: 24px;
-      box-sizing: border-box;
-    }
-    h1 { font-size: 2rem; margin: 0 0 8px; }
-    p  { font-size: 1rem; opacity: 0.75; margin: 0; }
-  </style>
-  <script>
-    (function () {
-      var params = new URLSearchParams(window.location.search);
-      var userId = params.get('id') || '';
-      var playStore = 'https://play.google.com/store/apps/details?id=com.kawaii.doodle';
-
-      // When the app IS installed, Android App Links intercepts the HTTPS URL at
-      // the OS level before this page ever loads — so we never reach here.
-      // When the app is NOT installed, redirect straight to the Play Store.
-      if (userId) {
-        // Silently attempt custom scheme in case App Link verification isn't active yet.
-        var iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.src = 'com.kawaii.doodle://profile/' + encodeURIComponent(userId);
-        document.body.appendChild(iframe);
-      }
-
-      window.location.replace(playStore);
-    })();
-  </script>
-</head>
-<body>
-  <h1>🎨 Kawaii Doodle</h1>
-  <p>Redirecting…</p>
-</body>
-</html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{margin:0;background:#fff}</style>
+<script>
+(function(){
+  var id = new URLSearchParams(location.search).get('id') || '';
+  if (id) {
+    var f = document.createElement('iframe');
+    f.style.display = 'none';
+    f.src = 'com.kawaii.doodle://profile/' + encodeURIComponent(id);
+    document.head.appendChild(f);
+  }
+  location.replace('https://play.google.com/store/apps/details?id=com.kawaii.doodle');
+})();
+</script>
+</head><body></body></html>
