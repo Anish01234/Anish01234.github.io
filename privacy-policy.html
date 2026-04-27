@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+    /* Strict Legal Color Palette */
     :root {
       --bg-page: #ffffff;
       --bg-sidebar: #f8f9fa;
@@ -19,6 +20,7 @@
       --link-hover: #1d4ed8;
       --highlight-bg: #eff6ff;
     }
+    /* Optimal Dark Mode */
     @media (prefers-color-scheme: dark) {
       :root {
         --bg-page: #0d1117;
@@ -31,8 +33,10 @@
         --highlight-bg: #1f2937;
       }
     }
+    /* Absolute Reset */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+    
     body {
       font-family: 'Lora', Georgia, serif;
       background-color: var(--bg-page);
@@ -41,6 +45,7 @@
       font-size: 1.05rem;
       -webkit-font-smoothing: antialiased;
     }
+    /* Header & Document Meta */
     .legal-header {
       background-color: var(--bg-page);
       border-bottom: 2px solid var(--text-main);
@@ -73,6 +78,7 @@
       border-radius: 4px;
       background: var(--bg-sidebar);
     }
+    /* Layout */
     .container {
       max-width: 1100px;
       margin: 0 auto;
@@ -82,6 +88,7 @@
       gap: 4rem;
       align-items: start;
     }
+    /* Rigid Sidebar */
     .sidebar {
       position: sticky;
       top: 2rem;
@@ -112,6 +119,7 @@
       color: var(--link-color);
       font-weight: 500;
     }
+    /* Formal Content Formatting */
     .document-body section {
       margin-bottom: 3.5rem;
       scroll-margin-top: 2rem;
@@ -125,17 +133,32 @@
       padding-bottom: 0.5rem;
       border-bottom: 1px solid var(--border-color);
     }
-    .document-body p { margin-bottom: 1.5rem; }
-    .document-body strong { font-weight: 600; color: var(--text-main); }
-    .document-body ul { margin-bottom: 1.5rem; padding-left: 2rem; }
-    .document-body li { margin-bottom: 0.5rem; padding-left: 0.5rem; }
+    .document-body p {
+      margin-bottom: 1.5rem;
+    }
+    .document-body strong {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+    .document-body ul {
+      margin-bottom: 1.5rem;
+      padding-left: 2rem;
+    }
+    .document-body li {
+      margin-bottom: 0.5rem;
+      padding-left: 0.5rem;
+    }
     .document-body a {
       color: var(--link-color);
       text-decoration: underline;
       text-decoration-thickness: 1px;
       text-underline-offset: 3px;
     }
-    .document-body a:hover { color: var(--link-hover); }
+    .document-body a:hover {
+      color: var(--link-hover);
+    }
+    
+    /* Footer */
     footer {
       text-align: center;
       padding: 2rem;
@@ -145,6 +168,7 @@
       border-top: 1px solid var(--border-color);
       margin-top: 2rem;
     }
+    /* Print Optimization */
     @media print {
       body { background: white; color: black; font-size: 12pt; }
       .sidebar { display: none; }
@@ -153,6 +177,7 @@
       footer { display: none; }
       @page { margin: 1in; }
     }
+    /* Mobile */
     @media (max-width: 850px) {
       .container { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.5rem; }
       .sidebar { display: none; }
@@ -166,11 +191,12 @@
     <div class="project-name">Kawaii Doodle</div>
     <h1>Privacy Policy</h1>
     <div class="document-meta">
-      <span><strong>Document ID:</strong> PRIV-2026-V2.1</span>
+      <span><strong>Document ID:</strong> PRIV-2026-V2.2</span>
       <span><strong>Effective Date:</strong> April 28, 2026</span>
     </div>
   </header>
   <div class="container">
+    
     <aside class="sidebar">
       <h3>Index</h3>
       <ul id="toc">
@@ -191,7 +217,7 @@
       </ul>
     </aside>
     <main class="document-body">
-
+      
       <section id="introduction">
         <p>Welcome to Kawaii Doodle ("we", "us", or "our"). This Privacy Policy explains what information we collect when you use our Android application, how we use it, and your rights regarding your data. By using Kawaii Doodle, you explicitly agree to the collection and use of information in accordance with this policy.</p>
         <p>For information on how Google collects and processes data when you use our application, please visit <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses information from sites or apps that use our services</a>.</p>
@@ -210,6 +236,7 @@
           <li><strong>Spam or misleading content:</strong> Repetitive, off-topic, or deliberately misleading submissions.</li>
         </ul>
         <p>We provide an in-app reporting mechanism on all Community Feed Doodles and Comments. Users may report content using any of the following categories: <em>Sexual or explicit content, Violence or graphic content, Hate speech or discrimination, Harassment or bullying, Drugs, weapons, or dangerous content, Spam or not a drawing, Underage or child safety concern,</em> and <em>Other</em>. Reported content is reviewed by our moderation team, and violating content is removed. Accounts that repeatedly violate these standards are permanently banned.</p>
+        <p><strong>Automated content filtering:</strong> All text comments submitted through the application are automatically screened against a prohibited-content keyword system before being posted. Comments matching prohibited categories are blocked in real time and are not published. This automated filtering system is implemented in compliance with <a href="https://support.google.com/publisherpolicies/answer/11401695" target="_blank" rel="noopener">Google's recommendations for managing user-generated content</a> on ad-monetized platforms.</p>
         <p>This content framework is maintained to comply with the <a href="https://support.google.com/publisherpolicies/answer/11185380" target="_blank" rel="noopener">Google Publisher Restrictions</a>, which identify restricted content categories that affect advertising eligibility. Kawaii Doodle does not intentionally host content in any restricted category and actively moderates its Community Feed to prevent such content from appearing.</p>
       </section>
 
@@ -269,6 +296,7 @@
       <section id="advertising">
         <h2>5. Advertising</h2>
         <p>Kawaii Doodle displays <strong>optional rewarded advertisements</strong> powered by <strong>Google AdMob</strong>. These ads are entirely voluntary — free users may choose to watch a rewarded ad to earn a bonus doodle send.</p>
+
         <p><strong>Data collected by ad serving:</strong> As a consequence of displaying ads, Google AdMob's SDK may collect and process the following types of data from your device:</p>
         <ul>
           <li><strong>Android Advertising ID (AAID)</strong> — a resettable device identifier used for ad targeting and measurement.</li>
@@ -277,15 +305,20 @@
           <li><strong>SDK-level interaction signals</strong> — equivalent to web beacons, used by AdMob to measure ad impressions and engagement.</li>
         </ul>
         <p>All of the above data collection is performed solely by Google AdMob's SDK and is governed by the Google Privacy Policy. We do not receive, store, or have access to this data.</p>
+
         <p><strong>Personalization and consent:</strong> Upon first launching the app, users in the European Economic Area (EEA), United Kingdom, and Switzerland are presented with a consent form powered by <strong>Google's User Messaging Platform (UMP)</strong>, in compliance with the <strong>EU User Consent Policy</strong> and the <strong>IAB Europe Transparency and Consent Framework (TCF)</strong>. This form allows you to choose whether personalized advertising is permitted. Ads are only loaded and displayed after your consent preference has been recorded. For users outside regulated regions, non-personalized ad requests may be made in accordance with applicable standards.</p>
+
         <p><strong>Interest-based advertising (AdChoices):</strong> When personalized ads are enabled, Google may use your Advertising ID and other signals to show you interest-based advertisements. Personalized ads served by Google are marked with the <strong>AdChoices icon (▶ i)</strong>, which links to information about how the ad was targeted. This is consistent with applicable internet advertising industry guidelines, including the <a href="https://digitaladvertisingalliance.org/principles" target="_blank" rel="noopener">Self-Regulatory Principles for Online Behavioral Advertising of the Digital Advertising Alliance (DAA)</a> and <a href="https://www.youronlinechoices.com" target="_blank" rel="noopener">IAB Europe's EU Framework for Online Behavioral Advertising</a>.</p>
+
         <p><strong>No sensitive category targeting:</strong> We do not permit targeting of ads through our application based on sensitive personal attributes, including health, financial status, race or ethnicity, religion, sexual orientation, political views, or trade union membership.</p>
+
         <p><strong>How to opt out or change your ad preferences:</strong></p>
         <ul>
           <li><strong>In-App (EEA/UK/CH users):</strong> Navigate to <em>Profile → Ad Privacy Settings</em> to revisit and update your ad personalization choices at any time.</li>
           <li><strong>Device-Level Opt-Out:</strong> On Android, go to <em>Settings → Privacy → Ads</em> and enable <strong>"Opt out of Ads Personalization"</strong> (Android 12 and below) or reset / delete your Advertising ID (Android 13+).</li>
           <li><strong>Google Ad Settings:</strong> You may also manage your Google ad personalization preferences at <a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a>.</li>
         </ul>
+
         <p>Kawaii Doodle does not pass any personally identifiable information (such as your name, email address, or account ID) to Google AdMob for advertising purposes. All data collection by Google AdMob is governed by the <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google Advertising Policies</a> and the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>. For more information on how Google collects and processes data when you use our app, please visit <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses information from sites or apps that use our services</a>.</p>
       </section>
 
