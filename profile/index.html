@@ -1,18 +1,119 @@
 <!DOCTYPE html>
-<html><head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<style>body{margin:0;background:#fff}</style>
-<script>
-(function(){
-  var id = new URLSearchParams(location.search).get('id') || '';
-  if (id) {
-    var f = document.createElement('iframe');
-    f.style.display = 'none';
-    f.src = 'com.kawaii.doodle://profile/' + encodeURIComponent(id);
-    document.head.appendChild(f);
-  }
-  location.replace('https://play.google.com/store/apps/details?id=com.kawaii.doodle');
-})();
-</script>
-</head><body></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Open Kawaii Doodle Profile</title>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #5E60FE 0%, #90AAFF 50%, #B4A0EC 100%);
+      color: #111827;
+    }
+
+    .card {
+      width: min(90vw, 420px);
+      background: rgba(255,255,255,0.92);
+      border-radius: 24px;
+      padding: 28px 22px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+    }
+
+    .logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin: 0 0 8px;
+    }
+
+    p {
+      margin: 0 0 18px;
+      color: #4b5563;
+      line-height: 1.45;
+    }
+
+    a.button {
+      display: block;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 14px 18px;
+      font-weight: 800;
+      margin-top: 12px;
+    }
+
+    .primary {
+      background: #5E60FE;
+      color: white;
+    }
+
+    .secondary {
+      background: #EEF2FF;
+      color: #3730A3;
+    }
+
+    .small {
+      font-size: 13px;
+      color: #6b7280;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <img class="logo" src="/assets/kawaii-doodle-icon.png" alt="Kawaii Doodle" />
+
+    <h1>Open Kawaii Doodle Profile</h1>
+    <p>Opening this profile in Kawaii Doodle...</p>
+
+    <a id="openApp" class="button primary" href="#">Open in Kawaii Doodle</a>
+    <a class="button secondary" href="https://play.google.com/store/apps/details?id=com.kawaii.doodle">
+      Install from Play Store
+    </a>
+
+    <div class="small">
+      If the app does not open, tap the button above.
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var id = params.get("id") || "";
+
+      if (!id && window.location.pathname.indexOf("/profile/") === 0) {
+        id = window.location.pathname.replace("/profile/", "").split("/")[0] || "";
+      }
+
+      id = decodeURIComponent(id).trim();
+
+      var openButton = document.getElementById("openApp");
+
+      if (!id) {
+        document.querySelector("p").textContent = "This profile link is missing a profile ID.";
+        openButton.style.display = "none";
+        return;
+      }
+
+      var appLink = "com.kawaii.doodle://profile/" + encodeURIComponent(id);
+      openButton.href = appLink;
+
+      setTimeout(function () {
+        window.location.href = appLink;
+      }, 300);
+    })();
+  </script>
+</body>
+</html>
