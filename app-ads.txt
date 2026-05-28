@@ -1,3 +1,4 @@
+ownerdomain=kawaiidoodle.netlify.app
 lijit.com, 528770, RESELLER, fafdf38b16bf6b2b
 admanmedia.com, 2242, RESELLER
 google.com, pub-2923085774557613, RESELLER, f08c47fec0942fa0
